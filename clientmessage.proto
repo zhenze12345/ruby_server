@@ -1,0 +1,22 @@
+option optimize_for = SPEED;
+
+enum CLIENT_MSG_ID
+{
+	ID_C2S_REQUEST_LOGINLOGIC		= 0x0001;	// 客户端登录登录服务器并准备跳转
+	ID_S2C_RESPONSE_LOGINLOGIC		= 0x0002;	// 服务器下发需要跳转的服务器
+};
+
+// ID_C2S_REQUEST_LOGINLOGIC
+message CMessageLoginLogicRequest
+{
+	optional string Platform	= 1;		// 平台
+	optional uint32 Type		= 2;		// 类型
+};
+
+// ID_S2C_RESPONSE_LOGINLOGIC
+message CMessageLoginLogicResponse
+{
+	optional string IPAddress	= 1;		// 地址
+	optional uint32 Port		= 2;		// 端口
+};
+

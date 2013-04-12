@@ -1,0 +1,20 @@
+option optimize_for = SPEED;
+
+enum SERVER_MSG_ID
+{
+	ID_S2S_REQUEST_REGISTER_SERVER		= 0x0101;			// 向服务器注册
+	ID_S2S_RESPONSE_REGISTER_SERVER		= 0x0102;			// 向服务器注册的回复
+};
+
+// ID_S2S_REQUEST_REGISTER_SERVER
+message CMessageRegisterServerRequest
+{
+	optional string IPAddress	= 1;	// 对外网的IP地址
+	optional uint32 Port		= 2;	// 对外网的端口
+};
+
+// ID_S2S_RESPONSE_REGISTER_SERVER 
+message CMessageRegisterServerResponse
+{
+
+};
